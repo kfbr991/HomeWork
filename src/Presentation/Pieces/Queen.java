@@ -1,5 +1,6 @@
 package Presentation.Pieces;
 
+import Presentation.PieceName;
 import Presentation.Square;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class Queen implements IPiece
     }
 
     @Override
-    public String getPieceName() {
-        return "Queen";
+    public PieceName getPieceName() {
+        return PieceName.Queen;
     }
 }

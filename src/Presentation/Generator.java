@@ -15,11 +15,11 @@ public class Generator
         List<IPiece> pieces = new ArrayList<>();
 
         pieces.add(new Bishop());
-        pieces.add(new Rook());
-        pieces.add(new Queen());
+        pieces.add(new King());
         pieces.add(new Knight());
         pieces.add(new Pawn());
-        pieces.add(new King());
+        pieces.add(new Queen());
+        pieces.add(new Rook());
 
         try
         {
@@ -30,7 +30,7 @@ public class Generator
                 for (short i = 0; i < 64; i++)
                 {
                     Square square = new Square(i);
-                    writer.println(piece.getPieceName() + square.toString() + piece.getAllLegalSquares(square).toString());
+                    writer.println(piece.getPieceName().name() + square.toString() + piece.getAllLegalSquares(square).toString());
                 }
             }
 

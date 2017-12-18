@@ -1,5 +1,6 @@
 package Presentation.Pieces;
 
+import Presentation.PieceName;
 import Presentation.Square;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,8 +67,8 @@ public class Bishop implements IPiece
     }
 
     @Override
-    public String getPieceName()
+    public PieceName getPieceName()
     {
-        return "Bishop";
+        return PieceName.Bishop;
     }
 }

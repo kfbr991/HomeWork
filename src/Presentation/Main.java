@@ -2,6 +2,10 @@ package Presentation;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main
@@ -38,26 +42,21 @@ public class Main
         }
         else
         {
-            File file = new File("src/Presentation/GeneratorResult.txt");
             try
             {
-                Scanner scanner = new Scanner(file);
+                List<String> genRes = Files.readAllLines(Paths.get("src/Presentation", "GeneratorResult.txt"));
 
-                while (scanner.hasNext())
-                {
-                    String line = scanner.nextLine();
+                Square square = new Square(input[1].charAt(0), (short)(input[1].charAt(1) - '0'));
 
-                    if(line.contains(input[0] + input[1]))
-                    {
-                        System.out.println(line.substring(input[0].length() + input[1].length()));
-                    }
-                }
-            }
-            catch (FileNotFoundException e)
+                int i = (PieceName.valueOf(input[0]).ordinal() * 64) + square.toInt();
+
+                String res = genRes.get(i);
+
+                System.out.println(res.substring(input[0].length() + input[1].length()));
+            } catch (IOException e)
             {
                 e.printStackTrace();
             }
         }
-
     }
 }
