@@ -42,6 +42,7 @@ public class Main
         }
         else
         {
+            /*reading from the txt file
             try
             {
                 List<String> genRes = Files.readAllLines(Paths.get("src/Presentation", "GeneratorResult.txt"));
@@ -56,7 +57,13 @@ public class Main
             } catch (IOException e)
             {
                 e.printStackTrace();
-            }
+            }*/
+
+            GenResStrArr a = new GenResStrArr();
+            Square square = new Square(input[1].charAt(0), (short)(input[1].charAt(1) - '0'));
+
+
+            System.out.println(a.getAtId((PieceName.valueOf(input[0]).ordinal() * 64) + square.toInt()));
         }
     }
 }
