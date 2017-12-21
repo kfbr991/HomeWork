@@ -32,7 +32,7 @@ public class Main
         {
             System.out.println("Unacceptable!!! Input must contain 1 space.");
         }
-        else if(!input[0].equalsIgnoreCase("King") && !input[0].equalsIgnoreCase("Knight") && !input[0].equalsIgnoreCase("Queen") && !input[0].equalsIgnoreCase("Bishop") && !input[0].equalsIgnoreCase("Rook") && !input[0].equalsIgnoreCase("Pawn"))
+        else if(!input[0].equals("King") && !input[0].equals("Knight") && !input[0].equals("Queen") && !input[0].equals("Bishop") && !input[0].equals("Rook") && !input[0].equals("Pawn"))
         {
             System.out.println("Unacceptable!!! First word must be one of supported Piece names.");
         }
